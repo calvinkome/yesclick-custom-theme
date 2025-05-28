@@ -1,7 +1,7 @@
 <?php
 /*
 Theme Name: ChatPion Modern Theme 
-Unique Name: ChatPionModern
+Unique Name: ChatPion Modern Theme
 Theme URI: https://chatpion.com
 Author: ChatPion Team
 Author URI: https://chatpion.com
@@ -20,12 +20,12 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
     <meta name="author" content="<?php echo $this->config->item('institute_address1'); ?>">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="<?php echo $this->config->item('product_name'); ?>" />
-	<meta property="og:site" content="<?php echo base_url(); ?>" />
-	<meta property="og:title" content="<?php echo $this->config->item('product_name'); ?>"/>
-	<meta property="og:description" content="<?php echo $this->config->item('product_short_name'); ?> - The ultimate messaging platform for your business" />
-	<meta property="og:image" content="<?php echo base_url();?>assets/img/logo.png" />
-	<meta property="og:url" content="<?php echo base_url(); ?>" />
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
@@ -38,7 +38,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
     <link href="<?php echo base_url('home/xit_load_files/css/swiper.css'); ?>" rel="stylesheet">
 	<link href="<?php echo base_url('home/xit_load_files/css/magnific-popup.css'); ?>" rel="stylesheet">
 	<link href="<?php echo base_url('home/xit_load_files/css/styles.css'); ?>" rel="stylesheet">
-	<link href="<?php echo base_url('home/xit_load_files/ChatPionModern/css/custom.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('home/xit_load_files/css/custom.css'); ?>" rel="stylesheet">
 	
 	<!-- Favicon  -->
     <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.png">
@@ -58,6 +58,9 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top shadow-sm">
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html"><?php echo $this->config->item("product_short_name"); ?></a> -->
+
         <!-- Image Logo -->
         <a class="navbar-brand logo-image" href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/img/logo.png" alt="<?php echo $this->config->item('product_name');?>"></a>
         
@@ -74,18 +77,10 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                     <a class="nav-link page-scroll" href="#header">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">Features</a>
+                    <a class="nav-link page-scroll" href="#services">Services</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#pricing">Pricing</a>
-                </li>
-                <?php if($this->config->item('display_video_block') == '1') : ?>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#video">Demo</a>
-                </li>
-                <?php endif; ?>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll btn btn-outline-light rounded-pill px-3 ml-2" href="<?php echo base_url('home/login'); ?>"><i class="fas fa-sign-in-alt mr-1"></i> Login</a>
@@ -98,16 +93,18 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                         <a class="dropdown-item" href="<?php echo base_url('home/terms_use'); ?>"><span class="item-text">Terms Conditions</span></a>
                         <div class="dropdown-items-divide-hr"></div>
                         <a class="dropdown-item" href="<?php echo base_url('home/privacy_policy'); ?>"><span class="item-text">Privacy Policy</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="<?php echo base_url('home/gdpr'); ?>"><span class="item-text">GDPR Compliance</span></a>
                     </div>
                 </li>
                 <!-- end of dropdown menu -->
+
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">Contact</a>
+                </li>
             </ul>
             <span class="nav-item social-icons">
                 <?php if($this->config->item('facebook') != '') : ?>
                 <span class="fa-stack">
-                    <a href="<?php echo $this->config->item('facebook'); ?>" target="_blank">
+                    <a href="<?php echo $this->config->item('facebook'); ?>">
                         <i class="fas fa-circle fa-stack-2x facebook"></i>
                         <i class="fab fa-facebook-f fa-stack-1x"></i>
                     </a>
@@ -115,7 +112,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                 <?php endif; ?>
                 <?php if($this->config->item('twitter') != '') : ?>
                 <span class="fa-stack">
-                    <a href="<?php echo $this->config->item('twitter'); ?>" target="_blank">
+                    <a href="<?php echo $this->config->item('twitter'); ?>">
                         <i class="fas fa-circle fa-stack-2x twitter"></i>
                         <i class="fab fa-twitter fa-stack-1x"></i>
                     </a>
@@ -136,9 +133,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                         <div class="text-container">
                             <h1><span class="turquoise"><?php echo $this->config->item("product_short_name"); ?></span> - Modern Messaging Platform</h1>
                             <p class="p-large">Use <?php echo $this->config->item("product_short_name"); ?> to streamline your business communications and connect with your customers like never before</p>
-                            <?php if($this->config->item('enable_signup_form') != '0') : ?>
                             <a class="btn-solid-lg page-scroll rounded-pill shadow-sm" href="<?php echo base_url('home/sign_up'); ?>"><i class="fas fa-user-plus mr-1"></i> Sign Up Free</a>
-                            <?php endif; ?>
                         </div> <!-- end of text-container -->
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
@@ -166,6 +161,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="image-container">
+                                        
                                         <img class="img-responsive" src="<?php echo xit_load_images('images/customer-logo-1.png'); ?>" alt="alternative">
                                     </div>
                                 </div>
@@ -426,7 +422,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                             <!-- <div class="card-subtitle">Just to see what can be achieved</div> -->
                             <hr class="cell-divide-hr">
                             <div class="price">
-                                <span class="currency"><?php echo isset($curency_icon) ? $curency_icon : '$'; ?></span><span class="value"><?php echo $pack["price"]?></span>
+                                <span class="currency"><?php echo $curency_icon; ?></span><span class="value"><?php echo $pack["price"]?></span>
                                 <div class="frequency"><?php echo $pack["validity"]?> <?php echo $this->lang->line("days"); ?></div>
                             </div>
                             <hr class="cell-divide-hr">
@@ -486,7 +482,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
 
     <!-- Video -->
     <?php if($this->config->item('display_video_block') == '1' || $this->config->item('promo_video') != '') : ?>
-    <div id="video" class="basic-3 bg-white">
+    <div class="basic-3 bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -539,7 +535,6 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                             <div class="swiper-wrapper">
                             <?php 
                                 $customerReview = $this->config->item('customer_review');
-                                if(!empty($customerReview)) :
                                 $ct=0;
                                 foreach($customerReview as $singleReview) : 
                                 $ct++;
@@ -566,10 +561,8 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                                     </div>
                                 </div> <!-- end of swiper-slide -->
                                 <!-- end of slide -->
-                            <?php 
-                                endforeach;
-                                endif;
-                            ?>
+                            <?php endforeach;
+                             ?>
                             </div> <!-- end of swiper-wrapper -->
         
                             <!-- Add Arrows -->
@@ -605,17 +598,17 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                         <div class="image-wrapper">
                             <img class="img-fluid" src="<?php echo xit_load_images('images/team-member-1.svg'); ?>" alt="alternative">
                         </div> <!-- end of image-wrapper -->
-                        <p class="p-large"><strong>Sarah Johnson</strong></p>
-                        <p class="job-title">Customer Success Manager</p>
+                        <p class="p-large">John Doe</p>
+                        <p class="job-title">CEO & Founder</p>
                         <span class="social-icons">
                             <span class="fa-stack">
-                                <a href="#">
+                                <a href="#your-link">
                                     <i class="fas fa-circle fa-stack-2x facebook"></i>
                                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#">
+                                <a href="#your-link">
                                     <i class="fas fa-circle fa-stack-2x twitter"></i>
                                     <i class="fab fa-twitter fa-stack-1x"></i>
                                 </a>
@@ -629,17 +622,17 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                         <div class="image-wrapper">
                             <img class="img-fluid" src="<?php echo xit_load_images('images/team-member-2.svg'); ?>" alt="alternative">
                         </div> <!-- end of image wrapper -->
-                        <p class="p-large"><strong>David Chen</strong></p>
-                        <p class="job-title">Lead Developer</p>
+                        <p class="p-large">Jane Smith</p>
+                        <p class="job-title">Product Manager</p>
                         <span class="social-icons">
                             <span class="fa-stack">
-                                <a href="#">
+                                <a href="#your-link">
                                     <i class="fas fa-circle fa-stack-2x facebook"></i>
                                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#">
+                                <a href="#your-link">
                                     <i class="fas fa-circle fa-stack-2x twitter"></i>
                                     <i class="fab fa-twitter fa-stack-1x"></i>
                                 </a>
@@ -653,17 +646,17 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                         <div class="image-wrapper">
                             <img class="img-fluid" src="<?php echo xit_load_images('images/team-member-3.svg'); ?>" alt="alternative">
                         </div> <!-- end of image wrapper -->
-                        <p class="p-large"><strong>Michael Rodriguez</strong></p>
-                        <p class="job-title">AI Integration Specialist</p>
+                        <p class="p-large">Michael Johnson</p>
+                        <p class="job-title">Lead Developer</p>
                         <span class="social-icons">
                             <span class="fa-stack">
-                                <a href="#">
+                                <a href="#your-link">
                                     <i class="fas fa-circle fa-stack-2x facebook"></i>
                                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#">
+                                <a href="#your-link">
                                     <i class="fas fa-circle fa-stack-2x twitter"></i>
                                     <i class="fab fa-twitter fa-stack-1x"></i>
                                 </a>
@@ -677,17 +670,17 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                         <div class="image-wrapper">
                             <img class="img-fluid" src="<?php echo xit_load_images('images/team-member-4.svg'); ?>" alt="alternative">
                         </div> <!-- end of image wrapper -->
-                        <p class="p-large"><strong>Emily Taylor</strong></p>
-                        <p class="job-title">Marketing Strategist</p>
+                        <p class="p-large">Sarah Williams</p>
+                        <p class="job-title">Customer Success</p>
                         <span class="social-icons">
                             <span class="fa-stack">
-                                <a href="#">
+                                <a href="#your-link">
                                     <i class="fas fa-circle fa-stack-2x facebook"></i>
                                     <i class="fab fa-facebook-f fa-stack-1x"></i>
                                 </a>
                             </span>
                             <span class="fa-stack">
-                                <a href="#">
+                                <a href="#your-link">
                                     <i class="fas fa-circle fa-stack-2x twitter"></i>
                                     <i class="fab fa-twitter fa-stack-1x"></i>
                                 </a>
@@ -710,10 +703,9 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                 <div class="col-lg-12">
                     <h2 class="text-center">Contact Information</h2>
                     <ul class="list-unstyled li-space-lg text-center">
-                        <li class="address">Don't hesitate to give us a call or send us a contact form message</li>
-                        <li><i class="fas fa-map-marker-alt"></i><?php echo $this->config->item('institute_address2'); ?></li>
-                        <li><i class="fas fa-phone"></i><a class="turquoise"><?php echo $this->config->item('institute_mobile'); ?></a></li>
-                        <li><i class="fas fa-envelope"></i><a class="turquoise"><?php echo $this->config->item('institute_email'); ?></a></li>
+                        <li class="address"><?php echo $this->config->item('institute_address1'); ?>, <?php echo $this->config->item('institute_address2'); ?></li>
+                        <li><i class="fas fa-phone"></i><a class="turquoise" href="tel:<?php echo $this->config->item('institute_mobile'); ?>"><?php echo $this->config->item('institute_mobile'); ?></a></li>
+                        <li><i class="fas fa-envelope"></i><a class="turquoise" href="mailto:<?php echo $this->config->item('institute_email'); ?>"><?php echo $this->config->item('institute_email'); ?></a></li>
                     </ul>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -724,82 +716,33 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-xs-12">
-                        <?php 
-                            if($this->session->userdata('mail_sent') == 1) {
-                            echo "<div class='alert alert-success text-center'>".$this->lang->line("we have received your email. we will contact you through email as soon as possible")."</div>";
-                            $this->session->unset_userdata('mail_sent');
-                            }
-                        ?>
-                        </div>
-                    </div>
+                    
                     <!-- Contact Form -->
-                    <form action="<?php echo site_url("home/email_contact"); ?>" method="post" class="contact-form">
-                        <div class="row">
-                            <div class="col-md-7 col-lg-7 col-sm-12 col-xs-12">
-                                <div class="form-group" id="email-field">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                                        </div>
-                                        <input type="email" class="form-control" required id="email" <?php echo set_value("email"); ?> placeholder="<?php echo $this->lang->line("email");?>" name="email">
-                                    </div>
-                                    <span class="red"><?php echo form_error("email"); ?></span>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-5 col-lg-5 col-sm-12 col-xs-12">
-                                <div class="form-group" id="message-field">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-calculator"></i></span>
-                                        </div>
-                                        <input type="number" class="form-control" step="1" required id="captcha" <?php echo set_value("captcha"); ?> placeholder="<?php echo $contact_num1. "+". $contact_num2." = ?"; ?>" name="captcha">
-                                    </div>
-                                    <span class="red">
-                                        <?php 
-                                        if(form_error('captcha')) 
-                                            echo form_error('captcha'); 
-                                        else  
-                                        { 
-                                            echo $this->session->userdata("contact_captcha_error"); 
-                                            $this->session->unset_userdata("contact_captcha_error"); 
-                                        } 
-                                        ?>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                <div class="form-group" id="phone-field">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-heading"></i></span>
-                                        </div>
-                                        <input type="text" class="form-control" required id="subject" <?php echo set_value("subject"); ?> placeholder="<?php echo $this->lang->line("message subject");?>" name="subject">
-                                    </div>
-                                    <span class="red"><?php echo form_error("subject"); ?></span>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                <div class="form-group" id="message-field">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-comment"></i></span>
-                                        </div>
-                                        <textarea class="form-control" rows="3" required id="message" <?php echo set_value("message"); ?> placeholder="<?php echo $this->lang->line("message");?>" name="message"></textarea>
-                                    </div>
-                                    <span class="red"><?php echo form_error("message") ?></span>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                                <div class="form-group center">
-                                    <button class="btn btn-primary rounded-pill" type="submit"><i class="fas fa-paper-plane mr-1"></i> <?php echo $this->lang->line("Send Message");?></button>
-                                </div>
-                            </div>
+                    <form id="contactForm" data-toggle="validator" data-focus="false">
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" id="cname" required>
+                            <label class="label-control" for="cname">Name</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Your message</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group checkbox">
+                            <input type="checkbox" id="cterms" value="Agreed-to-Terms" required>I have read and agree with the stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms & Conditions</a> 
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control-submit-button rounded-pill">SUBMIT MESSAGE</button>
+                        </div>
+                        <div class="form-message">
+                            <div id="cmsgSubmit" class="h3 text-center hidden"></div>
                         </div>
                     </form>
                     <!-- end of contact form -->
@@ -818,7 +761,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                 <div class="col-md-4">
                     <div class="footer-col">
                         <h4>About <?php echo $this->config->item("product_short_name"); ?></h4>
-                        <p>We're passionate about offering the best messaging platform to help businesses grow and engage with their customers</p>
+                        <p>We're passionate about providing the best messaging platform for businesses to connect with their customers</p>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
@@ -827,7 +770,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                         <ul class="list-unstyled li-space-lg">
                             <li class="media">
                                 <i class="fas fa-square"></i>
-                                <div class="media-body">Our business partners <a class="turquoise" href="https://xeroneit.net">xeroneit.net</a></div>
+                                <div class="media-body">Our business partners <a class="turquoise" href="#your-link">startupguide.com</a></div>
                             </li>
                             <li class="media">
                                 <i class="fas fa-square"></i>
@@ -839,38 +782,24 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                 <div class="col-md-4">
                     <div class="footer-col last">
                         <h4>Social Media</h4>
-                        <?php if($this->config->item('facebook') != ''): ?>
                         <span class="fa-stack">
-                            <a href="<?php echo $this->config->item('facebook'); ?>" target="_blank">
+                            <a href="<?php echo $this->config->item('facebook'); ?>">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-facebook-f fa-stack-1x"></i>
                             </a>
                         </span>
-                        <?php endif; ?>
-                        <?php if($this->config->item('twitter') != ''): ?>
                         <span class="fa-stack">
-                            <a href="<?php echo $this->config->item('twitter'); ?>" target="_blank">
+                            <a href="<?php echo $this->config->item('twitter'); ?>">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-twitter fa-stack-1x"></i>
                             </a>
                         </span>
-                        <?php endif; ?>
-                        <?php if($this->config->item('youtube') != ''): ?>
                         <span class="fa-stack">
-                            <a href="<?php echo $this->config->item('youtube'); ?>" target="_blank">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-youtube fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <?php endif; ?>
-                        <?php if($this->config->item('linkedin') != ''): ?>
-                        <span class="fa-stack">
-                            <a href="<?php echo $this->config->item('linkedin'); ?>" target="_blank">
+                            <a href="<?php echo $this->config->item('linkedin'); ?>">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-linkedin-in fa-stack-1x"></i>
                             </a>
                         </span>
-                        <?php endif; ?>
                     </div> 
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -880,19 +809,17 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
 
 
     <!-- Copyright -->
-    <div class="copyright bg-dark text-white">
+    <div class="copyright">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © <?php echo date('Y'); ?> <a href="<?php echo base_url(); ?>"><?php echo $this->config->item("product_short_name"); ?></a> - <?php echo $this->config->item("institute_address1"); ?></p>
+                    <p class="p-small">Copyright © <?php echo date('Y'); ?> <a href="<?php echo base_url(); ?>"><?php echo $this->config->item('product_name'); ?></a> - All rights reserved</p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->
     </div> <!-- end of copyright --> 
     <!-- end of copyright -->
     
-    <?php $this->load->view("include/fb_px"); ?> 
-    <?php $this->load->view("include/google_code"); ?> 
     	
     <!-- Scripts -->
     <script src="<?php echo base_url('home/xit_load_files/js/jquery.min.js'); ?>"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
@@ -903,15 +830,8 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
     <script src="<?php echo base_url('home/xit_load_files/js/jquery.magnific-popup.js'); ?>"></script> <!-- Magnific Popup for lightboxes -->
     <script src="<?php echo base_url('home/xit_load_files/js/validator.min.js'); ?>"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
     <script src="<?php echo base_url('home/xit_load_files/js/scripts.js'); ?>"></script> <!-- Custom scripts -->
-    <script src="<?php echo base_url('home/xit_load_files/js/jquery.nicescroll.min.js'); ?>"></script> <!-- Custom scripts -->
+    
+    <?php $this->load->view("include/fb_px"); ?> 
+    <?php $this->load->view("include/google_code"); ?> 
 </body>
 </html>
-
-<style type="text/css" media="screen">
-    .red{color:red;}
-</style>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $(".scrollit").niceScroll();
-    });
-</script>
