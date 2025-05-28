@@ -33,12 +33,12 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
-    <link href="<?php echo base_url('home/xit_load_files/css/bootstrap.css'); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('home/xit_load_files/css/fontawesome-all.css'); ?>" rel="stylesheet">
-    <link href="<?php echo base_url('home/xit_load_files/css/swiper.css'); ?>" rel="stylesheet">
-	<link href="<?php echo base_url('home/xit_load_files/css/magnific-popup.css'); ?>" rel="stylesheet">
-	<link href="<?php echo base_url('home/xit_load_files/css/styles.css'); ?>" rel="stylesheet">
-	<link href="<?php echo base_url('home/xit_load_files/css/custom.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/site/ChatPionModern/css/bootstrap.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/site/ChatPionModern/css/fontawesome-all.css'); ?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/site/ChatPionModern/css/swiper.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/site/ChatPionModern/css/magnific-popup.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/site/ChatPionModern/css/styles.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('assets/site/ChatPionModern/css/custom.css'); ?>" rel="stylesheet">
 	
 	<!-- Favicon  -->
     <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.png">
@@ -162,32 +162,32 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                                 <div class="swiper-slide">
                                     <div class="image-container">
                                         
-                                        <img class="img-responsive" src="<?php echo xit_load_images('images/customer-logo-1.png'); ?>" alt="alternative">
+                                        <img class="img-responsive" src="<?php echo base_url('assets/site/ChatPionModern/images/customer-logo-1.png'); ?>" alt="alternative">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="image-container">
-                                        <img class="img-responsive" src="<?php echo xit_load_images('images/customer-logo-2.png'); ?>" alt="alternative">
+                                        <img class="img-responsive" src="<?php echo base_url('assets/site/ChatPionModern/images/customer-logo-2.png'); ?>" alt="alternative">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="image-container">
-                                        <img class="img-responsive" src="<?php echo xit_load_images('images/customer-logo-3.png'); ?>" alt="alternative">
+                                        <img class="img-responsive" src="<?php echo base_url('assets/site/ChatPionModern/images/customer-logo-3.png'); ?>" alt="alternative">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="image-container">
-                                        <img class="img-responsive" src="<?php echo xit_load_images('images/customer-logo-4.png'); ?>" alt="alternative">
+                                        <img class="img-responsive" src="<?php echo base_url('assets/site/ChatPionModern/images/customer-logo-4.png'); ?>" alt="alternative">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="image-container">
-                                        <img class="img-responsive" src="<?php echo xit_load_images('images/customer-logo-5.png'); ?>" alt="alternative">
+                                        <img class="img-responsive" src="<?php echo base_url('assets/site/ChatPionModern/images/customer-logo-5.png'); ?>" alt="alternative">
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="image-container">
-                                        <img class="img-responsive" src="<?php echo xit_load_images('images/customer-logo-6.png'); ?>" alt="alternative">
+                                        <img class="img-responsive" src="<?php echo base_url('assets/site/ChatPionModern/images/customer-logo-6.png'); ?>" alt="alternative">
                                     </div>
                                 </div>
                             </div> <!-- end of swiper-wrapper -->
@@ -216,7 +216,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
 
                     <!-- Card -->
                     <div class="card">
-                        <img class="card-image" src="<?php echo xit_load_images('images/services-icon-1.svg'); ?>" alt="alternative">
+                        <img class="card-image" src="<?php echo base_url('assets/site/ChatPionModern/images/services-icon-1.svg'); ?>" alt="alternative">
                         <div class="card-body">
                             <h4 class="card-title">Multi-Channel Messaging</h4>
                             <p>Connect with your customers across multiple platforms including Facebook, WhatsApp, Instagram, and more</p>
@@ -226,7 +226,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
 
                     <!-- Card -->
                     <div class="card">
-                        <img class="card-image" src="<?php echo xit_load_images('images/services-icon-2.svg'); ?>" alt="alternative">
+                        <img class="card-image" src="<?php echo base_url('assets/site/ChatPionModern/images/services-icon-2.svg'); ?>" alt="alternative">
                         <div class="card-body">
                             <h4 class="card-title">Automated Responses</h4>
                             <p>Set up intelligent chatbots and automated responses to engage with customers 24/7 without manual intervention</p>
@@ -236,7 +236,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
 
                     <!-- Card -->
                     <div class="card">
-                        <img class="card-image" src="<?php echo xit_load_images('images/services-icon-3.svg'); ?>" alt="alternative">
+                        <img class="card-image" src="<?php echo base_url('assets/site/ChatPionModern/images/services-icon-3.svg'); ?>" alt="alternative">
                         <div class="card-body">
                             <h4 class="card-title">Analytics Dashboard</h4>
                             <p>Track engagement, response rates, and customer satisfaction with our comprehensive analytics tools</p>
@@ -264,7 +264,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="<?php echo xit_load_images('images/details-1-office-worker.svg'); ?>" alt="alternative">
+                        <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/details-1-office-worker.svg'); ?>" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -279,7 +279,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
             <div class="row">
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="<?php echo xit_load_images('images/details-2-office-team-work.svg'); ?>" alt="alternative">
+                        <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/details-2-office-team-work.svg'); ?>" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
@@ -315,7 +315,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
                     <div class="image-container">
-                        <img class="img-fluid" src="<?php echo xit_load_images('images/details-lightbox-1.svg'); ?>" alt="alternative">
+                        <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/details-lightbox-1.svg'); ?>" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
@@ -358,7 +358,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                 <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
                 <div class="col-lg-8">
                     <div class="image-container">
-                        <img class="img-fluid" src="<?php echo xit_load_images('images/details-lightbox-2.svg'); ?>" alt="alternative">
+                        <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/details-lightbox-2.svg'); ?>" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
@@ -499,7 +499,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                                 $promo_video_link = $this->config->item('promo_video');
                             ?>
                             <a class="popup-youtube" href="<?php echo $promo_video_link; ?>" data-effect="fadeIn">
-                                <img class="img-fluid" src="<?php echo xit_load_images('images/video-frame.svg'); ?>" alt="alternative">
+                                <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/video-frame.svg'); ?>" alt="alternative">
                                 <span class="video-play-button">
                                     <span></span>
                                 </span>
@@ -523,7 +523,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
             <div class="row">
                 <div class="col-lg-6">
                     <div class="image-container">
-                        <img class="img-fluid" src="<?php echo xit_load_images('images/testimonials-2-men-talking.svg'); ?>" alt="alternative">
+                        <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/testimonials-2-men-talking.svg'); ?>" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6">
@@ -596,7 +596,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" src="<?php echo xit_load_images('images/team-member-1.svg'); ?>" alt="alternative">
+                            <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/team-member-1.svg'); ?>" alt="alternative">
                         </div> <!-- end of image-wrapper -->
                         <p class="p-large">John Doe</p>
                         <p class="job-title">CEO & Founder</p>
@@ -620,7 +620,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" src="<?php echo xit_load_images('images/team-member-2.svg'); ?>" alt="alternative">
+                            <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/team-member-2.svg'); ?>" alt="alternative">
                         </div> <!-- end of image wrapper -->
                         <p class="p-large">Jane Smith</p>
                         <p class="job-title">Product Manager</p>
@@ -644,7 +644,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" src="<?php echo xit_load_images('images/team-member-3.svg'); ?>" alt="alternative">
+                            <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/team-member-3.svg'); ?>" alt="alternative">
                         </div> <!-- end of image wrapper -->
                         <p class="p-large">Michael Johnson</p>
                         <p class="job-title">Lead Developer</p>
@@ -668,7 +668,7 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
                     <!-- Team Member -->
                     <div class="team-member">
                         <div class="image-wrapper">
-                            <img class="img-fluid" src="<?php echo xit_load_images('images/team-member-4.svg'); ?>" alt="alternative">
+                            <img class="img-fluid" src="<?php echo base_url('assets/site/ChatPionModern/images/team-member-4.svg'); ?>" alt="alternative">
                         </div> <!-- end of image wrapper -->
                         <p class="p-large">Sarah Williams</p>
                         <p class="job-title">Customer Success</p>
@@ -822,14 +822,14 @@ Description: A modern, responsive theme for ChatPion with enhanced UI/UX feature
     
     	
     <!-- Scripts -->
-    <script src="<?php echo base_url('home/xit_load_files/js/jquery.min.js'); ?>"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="<?php echo base_url('home/xit_load_files/js/popper.min.js'); ?>"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="<?php echo base_url('home/xit_load_files/js/bootstrap.min.js'); ?>"></script> <!-- Bootstrap framework -->
-    <script src="<?php echo base_url('home/xit_load_files/js/jquery.easing.min.js'); ?>"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="<?php echo base_url('home/xit_load_files/js/swiper.min.js'); ?>"></script> <!-- Swiper for image and text sliders -->
-    <script src="<?php echo base_url('home/xit_load_files/js/jquery.magnific-popup.js'); ?>"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="<?php echo base_url('home/xit_load_files/js/validator.min.js'); ?>"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="<?php echo base_url('home/xit_load_files/js/scripts.js'); ?>"></script> <!-- Custom scripts -->
+    <script src="<?php echo base_url('assets/site/ChatPionModern/js/jquery.min.js'); ?>"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="<?php echo base_url('assets/site/ChatPionModern/js/popper.min.js'); ?>"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="<?php echo base_url('assets/site/ChatPionModern/js/bootstrap.min.js'); ?>"></script> <!-- Bootstrap framework -->
+    <script src="<?php echo base_url('assets/site/ChatPionModern/js/jquery.easing.min.js'); ?>"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="<?php echo base_url('assets/site/ChatPionModern/js/swiper.min.js'); ?>"></script> <!-- Swiper for image and text sliders -->
+    <script src="<?php echo base_url('assets/site/ChatPionModern/js/jquery.magnific-popup.js'); ?>"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="<?php echo base_url('assets/site/ChatPionModern/js/validator.min.js'); ?>"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="<?php echo base_url('assets/site/ChatPionModern/js/scripts.js'); ?>"></script> <!-- Custom scripts -->
     
     <?php $this->load->view("include/fb_px"); ?> 
     <?php $this->load->view("include/google_code"); ?> 
