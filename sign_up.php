@@ -5,10 +5,10 @@
         <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/img/logo.png" alt="<?php echo $this->config->item('product_name');?>" width="200"></a>
       </div>
 
-      <div class="card card-primary">
-        <div class="card-header"><h4><i class="far fa-user-circle"></i> <?php echo $this->lang->line("Sign Up"); ?></h4></div>
+      <div class="card card-primary shadow-lg">
+        <div class="card-header bg-primary text-white"><h4><i class="far fa-user-circle"></i> <?php echo $this->lang->line("Sign Up"); ?></h4></div>
 
-        <div class="card-body">
+        <div class="card-body p-4">
           <?php 
             if($this->session->userdata('reg_success') == 1) {
               echo "<div class='alert alert-success text-center'>".$this->lang->line("An activation code has been sent to your email. please check your inbox to activate your account.")."</div>";
@@ -39,49 +39,69 @@
 
 
           <form method="POST" action="<?php echo site_url('home/sign_up_action');?>">
-            <div class="row">
-              <div class="form-group col-6">
-                <label for="frist_name"><?php echo $this->lang->line("Name"); ?> *</label>
-                <input id="name" type="text" class="form-control" name="name" autofocus required value="<?php echo set_value('name');?>">
+            <div class="row mb-3">
+              <div class="form-group col-md-6">
+                <label for="name" class="font-weight-bold"><?php echo $this->lang->line("Name"); ?> *</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <input id="name" type="text" class="form-control" name="name" autofocus required value="<?php echo set_value('name');?>" placeholder="<?php echo $this->lang->line("Enter your full name"); ?>">
+                </div>
               </div>
-              <div class="form-group col-6">
-                <label for="last_name"><?php echo $this->lang->line("Email"); ?> *</label>
-                <input id="email" type="email" class="form-control" name="email" required value="<?php echo set_value('email');?>">
+              <div class="form-group col-md-6">
+                <label for="email" class="font-weight-bold"><?php echo $this->lang->line("Email"); ?> *</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                  </div>
+                  <input id="email" type="email" class="form-control" name="email" required value="<?php echo set_value('email');?>" placeholder="<?php echo $this->lang->line("Enter your email"); ?>">
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="form-group col-md-6">
+                <label for="password" class="d-block font-weight-bold"><?php echo $this->lang->line("Password"); ?> *</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input id="password" type="password" class="form-control" required name="password" value="<?php echo set_value('password');?>" placeholder="<?php echo $this->lang->line("Enter password"); ?>">
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="password2" class="d-block font-weight-bold"><?php echo $this->lang->line("Confirm Password");?> *</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                  </div>
+                  <input id="password2" type="password" class="form-control" required name="confirm_password" value="<?php echo set_value('confirm_password');?>" placeholder="<?php echo $this->lang->line("Confirm your password"); ?>">
+                </div>
               </div>
             </div>
 
             <div class="row">
-              <div class="form-group col-6">
-                <label for="password" class="d-block"><?php echo $this->lang->line("Password"); ?> *</label>
-                <input id="password" type="password" class="form-control" required name="password" value="<?php echo set_value('password');?>">
-              </div>
-              <div class="form-group col-6">
-                <label for="password2" class="d-block"><?php echo $this->lang->line("Confirm Password");?> *</label>
-                <input id="password2" type="password" class="form-control" required name="confirm_password" value="<?php echo set_value('confirm_password');?>">
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="form-group col-12" style="margin-bottom:0">
-                <label><?php echo $this->lang->line("Captcha");?> *</label>
+              <div class="form-group col-12 mb-2">
+                <label class="font-weight-bold"><?php echo $this->lang->line("Captcha");?> *</label>
               </div>
             </div>                  
-            <div class="input-group mb-3">
+            <div class="input-group mb-4">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon3"><?php echo $num1. "+". $num2." = ?";?></span>
+                <span class="input-group-text bg-light"><i class="fas fa-calculator"></i> <?php echo $num1. " + ". $num2." = ?";?></span>
               </div>
-              <input type="number" class="form-control" required name="captcha" placeholder="<?php echo $this->lang->line("Put your answer here"); ?>" >
+              <input type="number" class="form-control" required name="captcha" placeholder="<?php echo $this->lang->line("Enter your answer"); ?>" >
             </div>      
 
-            <div class="form-group">
+            <div class="form-group mb-4">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" name="agree" required class="custom-control-input" id="agree">
-                <label class="custom-control-label" for="agree"><a target="_BLANK" href="<?php echo site_url();?>home/terms_use"><?php echo $this->lang->line("I agree with the terms and conditions");?></a></label>
+                <label class="custom-control-label" for="agree"><?php echo $this->lang->line("I agree with the");?> <a target="_BLANK" href="<?php echo site_url();?>home/terms_use" class="text-primary"><?php echo $this->lang->line("terms and conditions");?></a></label>
               </div>
             </div>
 
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-lg btn-block">
+              <button type="submit" class="btn btn-primary btn-lg btn-block rounded-pill">
                 <i class="fa fa-user-circle"></i> <?php echo $this->lang->line("sign up"); ?>
               </button>
             </div>

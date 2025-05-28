@@ -1,12 +1,12 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-12 col-sm-8 offset-sm-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+    <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
       <div class="login-brand">
         <a href="<?php echo base_url();?>"><img src="<?php echo base_url();?>assets/img/logo.png" alt="<?php echo $this->config->item('product_name');?>" width="200"></a>
       </div>
 
-      <div class="card card-primary">
-        <div class="card-header"><h4><i class="fas fa-sign-in-alt"></i> <?php echo $this->lang->line("Login"); ?></h4></div>
+      <div class="card card-primary shadow-lg">
+        <div class="card-header bg-primary text-white"><h4><i class="fas fa-sign-in-alt"></i> <?php echo $this->lang->line("Login"); ?></h4></div>
         <?php 
           if($this->session->flashdata('login_msg')!='') 
           {
@@ -34,31 +34,41 @@
           } 
 
           $default_user = $default_pass ="";
-          if($this->is_demo=='1'){
+          if(isset($this->is_demo) && $this->is_demo=='1'){
             $default_user = "admin@xerochat.com";
             $default_pass="123456";
           }
         ?>
-        <div class="card-body">
-          <form method="POST" action="<?php echo base_url('home/login'); ?>" class="needs-validation" novalidate="">
+        <div class="card-body p-4">
+          <form method="POST" action="<?php echo base_url('home/login'); ?>" class="needs-validation" novalidate>
             <div class="form-group">
-              <label for="email"><?php echo $this->lang->line("Email"); ?></label>
-              <input id="email" type="email" value="<?php echo $default_user ?>" class="form-control" name="username" tabindex="1" required autofocus>
+              <label for="email" class="font-weight-bold"><?php echo $this->lang->line("Email"); ?></label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                </div>
+                <input id="email" type="email" value="<?php echo $default_user ?>" class="form-control" name="username" tabindex="1" required autofocus placeholder="<?php echo $this->lang->line("Enter your email"); ?>">
+              </div>
               <!-- <div class="invalid-feedback">
                 Please fill in your email
               </div> -->
             </div>
 
             <div class="form-group">
-              <div class="d-block">
-              	<label for="password" class="control-label"><?php echo $this->lang->line("Password"); ?></label>
-                <div class="float-right">
-                  <a href="<?php echo site_url();?>home/forgot_password" class="text-small">
+              <div class="d-flex justify-content-between">
+              	<label for="password" class="font-weight-bold"><?php echo $this->lang->line("Password"); ?></label>
+                <div>
+                  <a href="<?php echo site_url();?>home/forgot_password" class="text-small text-primary">
                     <?php echo $this->lang->line("Forgot your password?"); ?>
                   </a>
                 </div>
               </div>
-              <input id="password" type="password"value="<?php echo $default_pass ?>"  class="form-control" name="password" tabindex="2" required>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                </div>
+                <input id="password" type="password" value="<?php echo $default_pass ?>" class="form-control" name="password" tabindex="2" required placeholder="<?php echo $this->lang->line("Enter your password"); ?>">
+              </div>
               <!-- <div class="invalid-feedback">
                 please fill in your password
               </div> -->
@@ -72,24 +82,24 @@
             </div> -->
 
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-lg btn-block login_btn" tabindex="4">
+              <button type="submit" class="btn btn-primary btn-lg btn-block login_btn rounded-pill" tabindex="4">
                 <i class="fa fa-sign-in-alt"></i> <?php echo $this->lang->line("login"); ?>
               </button>
             </div>
           </form>
           
           <?php if($this->config->item('enable_signup_form')!='0') : ?>
-          <div class="row sm-gutters">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6" style="padding-top: 15px;">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3">
             	<?php echo $google_login_button2=str_replace("ThisIsTheLoginButtonForGoogle",$this->lang->line("Login with Google"), $google_login_button); ?>
              </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-6" style="padding-top: 15px;">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 mb-3">
             	<?php echo $fb_login_button2=str_replace("ThisIsTheLoginButtonForFacebook",$this->lang->line("Login with Facebook"), $fb_login_button); ?>
             </div>
 
-            <div class="col-12">
-	             <div class="text-muted text-center">
-	            	<br><?php echo $this->lang->line("Do not have an account?"); ?> <a href="<?php echo base_url('home/sign_up'); ?>"><?php echo $this->lang->line("Create one"); ?></a>
+            <div class="col-12 mt-3">
+	             <div class="text-muted text-center border-top pt-3">
+	            	<?php echo $this->lang->line("Do not have an account?"); ?> <a href="<?php echo base_url('home/sign_up'); ?>" class="text-primary font-weight-bold"><?php echo $this->lang->line("Create one"); ?></a>
 	        	</div>
 	      	 </div>
           </div>
